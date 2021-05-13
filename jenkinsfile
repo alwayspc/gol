@@ -22,7 +22,6 @@ pipeline{
         }
         stage('archiving artifact'){
             steps{
-                echo "hai"
                 archiveArtifacts 'gameoflife-web/target/*.war'
                 junit 'gameoflife-web/target/surefire-reports/*.xml'
                 stash name: 'warfile', includes: 'gameoflife-web/target/*.war'
